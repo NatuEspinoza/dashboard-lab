@@ -1,5 +1,5 @@
 window.onload = function() {
-//NATALIA ESPINOZA
+  //NATALIA ESPINOZA
   // menu lateral de usuario
   var addStudent = document.getElementById('addStudent');
   addStudent.addEventListener('click', function() {
@@ -58,8 +58,8 @@ window.onload = function() {
   var desertorasGrafico = document.getElementById('desertoras-grafico');
   var inscritasText = document.createElement('div');
   enrollement.appendChild(inscritasText);
-  inscritasText.classList.add('infoBox','marginLeft-box');
-  inscritasText.innerHTML = '<h1>' + data.SCL["2017-2"].students.length +'</h1>'+'<br>'+'<h3># de alumnas inscritas </h3>';
+  inscritasText.classList.add('infoBox', 'marginLeft-box');
+  inscritasText.innerHTML = '<h1>' + data.SCL["2017-2"].students.length + '</h1>' + '<br>' + '<h3># de alumnas inscritas </h3>';
 
   //Calculando el total de desertoras
   var desertorasText = document.createElement('div');
@@ -75,57 +75,62 @@ window.onload = function() {
   //calcular el porcentaje de desertoras con una regla de tres
   porcentajeDesertoras = (desertoras * 100) / inscritas;
   enrollement.appendChild(desertorasText);
-  desertorasText.classList.add('infoBox','marginLeft-box', 'valorNegativo');
-  desertorasText.innerHTML = '<h1>' + (number_format(porcentajeDesertoras,0,'','')) +'% </h1>'+'<h3>de deserción'+'<br>'+(desertoras) + '# de desertoras </h3>';
+  desertorasText.classList.add('infoBox', 'marginLeft-box', 'valorNegativo');
+  desertorasText.innerHTML = '<h1>' + (number_format(porcentajeDesertoras, 0, '', '')) + '% </h1>' + '<h3>de deserción' + '<br>' + (desertoras) + '# de desertoras </h3>';
   enrollement.insertBefore(desertorasText, desertorasGrafico);
   enrollement.insertBefore(inscritasText, desertorasGrafico);
 
   //Función para formatear el resultado del porcentaje
-  function number_format( number, decimals, dec_point, thousands_sep ) {
+  function number_format(number, decimals, dec_point, thousands_sep) {
 
-     var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
-     var d = dec_point == undefined ? "," : dec_point;
-     var t = thousands_sep == undefined ? "." : thousands_sep, s = n < 0 ? "-" : "";
-     var i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+    var n = number,
+      c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
+    var d = dec_point == undefined ? "," : dec_point;
+    var t = thousands_sep == undefined ? "." : thousands_sep,
+      s = n < 0 ? "-" : "";
+    var i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+      j = (j = i.length) > 3 ? j % 3 : 0;
 
-     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
   }
 
   //Ingresar datos de desempeño del último sprint "achievement" (%)
-    var noCumple = data.SCL["2017-2"].ratings[1].student.no-cumple;
-    var supera = data.SCL["2017-2"].ratings[1].student.supera;
-    var cumple = data.SCL["2017-2"].ratings[1].student.cumple;
-    var cumpleMeta = cumple + supera;
-    var achievement = document.getElementById('achievement');
-    var cumpleGrafico = document.getElementById('cumple-grafico');
-    var achievementText = document.createElement('div');
-    achievement.appendChild(achievementText);
-    achievementText.classList.add('infoBox','marginCenter', 'valorPositivo');
-    achievementText.innerHTML = '<h1>'+(cumpleMeta)+'%</h1>'+'<br>'+'<h3>de alumnas cumple la meta (70% o +)</h3>';
-    achievement.insertBefore(achievementText, cumpleGrafico);
+  var noCumple = data.SCL["2017-2"].ratings[1].student.no - cumple;
+  var supera = data.SCL["2017-2"].ratings[1].student.supera;
+  var cumple = data.SCL["2017-2"].ratings[1].student.cumple;
+  var cumpleMeta = cumple + supera;
+  var achievement = document.getElementById('achievement');
+  var cumpleGrafico = document.getElementById('cumple-grafico');
+  var achievementText = document.createElement('div');
+  achievement.appendChild(achievementText);
+  achievementText.classList.add('infoBox', 'marginCenter', 'valorPositivo');
+  achievementText.innerHTML = '<h1>' + (cumpleMeta) + '%</h1>' + '<br>' + '<h3>de alumnas cumple la meta (70% o +)</h3>';
+  achievement.insertBefore(achievementText, cumpleGrafico);
 
   //Gráfica hse
   function scratchChart() {
-        // Create the data table.
-        var dataHse = new google.visualization.DataTable();
-        dataHse.addColumn('string', 'Topping');
-        dataHse.addColumn('number', 'Slices');
-        dataHse.addRows([
-          ['Estudiantes Cumplen Objetivo',62],
-          ['Estudiantes No Cumplen Objetivo', 73],
+    // Create the data table.
+    var dataHse = new google.visualization.DataTable();
+    dataHse.addColumn('string', 'Topping');
+    dataHse.addColumn('number', 'Slices');
+    dataHse.addRows([
+      ['Estudiantes Cumplen Objetivo', 62],
+      ['Estudiantes No Cumplen Objetivo', 73],
 
-        ]);
+    ]);
 
-        // Set chart options
-        var optionsHse = {'title':'LIFE SKILLS',
-                       'width':500,
-                       'height':300};
+    // Set chart options
+    var optionsHse = {
+      'title': 'LIFE SKILLS',
+      'width': 500,
+      'height': 300
+    };
 
 
-        // Instantiate and draw our chart, passing in some options.
-        var  Hse = new google.visualization.PieChart(document.getElementById('hse-grafico'));
-       Hse.draw( dataHse, optionsHse );
-     }
+    // Instantiate and draw our chart, passing in some options.
+    var Hse = new google.visualization.PieChart(document.getElementById('hse-grafico'));
+    Hse.draw(dataHse, optionsHse);
+  }
 
   //Ingresar nivel de satisfacción nps
   var nps = document.getElementById('nps');
@@ -136,95 +141,95 @@ window.onload = function() {
   var detractors = data.SCL["2017-2"].ratings[1].nps.detractors;
   var passive = data.SCL["2017-2"].ratings[1].nps.passive;
   var npsAcumulative = promoters - detractors;
-  npsText.innerHTML = '<h1>'+npsAcumulative+'%</h1>'+'<h3>nivel de satisfacción </h3>';
+  npsText.innerHTML = '<h1>' + npsAcumulative + '%</h1>' + '<h3>nivel de satisfacción </h3>';
   nps.insertBefore(npsText, npsGrafico);
-  npsText.classList.add('infoBox','marginNPS', 'valorPositivo');
+  npsText.classList.add('infoBox', 'marginNPS', 'valorPositivo');
   //ingresar (promoter, pasive y retractors)
-  iconosDiv.innerHTML = '<h3>Promoters ' + promoters + '%'+'<br><br>Detractors ' + detractors +'%'+'<br><br>Passive ' + passive +'%</h3>';
+  iconosDiv.innerHTML = '<h3>Promoters ' + promoters + '%' + '<br><br>Detractors ' + detractors + '%' + '<br><br>Passive ' + passive + '%</h3>';
 
 
   //PAULA GIRALDO
 
   //DIANA CHAPARRO
-//Lo necesario para menú tabs (pestañas)
-var mostrarOcultar = function(event){
+  //Lo necesario para menú tabs (pestañas)
+  var mostrarOcultar = function(event) {
     var tabSeleccionado = event.target.dataset.tabSeleccionado;
     var segundaGen2017 = document.getElementById("2017_2");
     var primeraGen2017 = document.getElementById("2017_1");
     var segundaGen2016 = document.getElementById("2016_2");
 
-       if(tabSeleccionado === 'tab2017_2'){
-        console.log('vemos gen 17-2');
-        //oculta gen 2017-1 y 2016-2
-        primeraGen2017.style.display= 'none';
-        segundaGen2016.style.display= 'none'
-        //mostrar gen 2017-2
-        segundaGen2017.style.display="block";
+    if (tabSeleccionado === 'tab2017_2') {
+      console.log('vemos gen 17-2');
+      //oculta gen 2017-1 y 2016-2
+      primeraGen2017.style.display = 'none';
+      segundaGen2016.style.display = 'none'
+      //mostrar gen 2017-2
+      segundaGen2017.style.display = "block";
 
-    }else if (tabSeleccionado === 'tab2017_1'){
-        console.log('vemos gen 17-1');
-        //oculta gen  2017-2 y 2016-2
-        segundaGen2017.style.display= 'none';
-        segundaGen2016.style.display= 'none'
-        //muestra solo 2017-1
-        primeraGen2017.style.display= 'block';
+    } else if (tabSeleccionado === 'tab2017_1') {
+      console.log('vemos gen 17-1');
+      //oculta gen  2017-2 y 2016-2
+      segundaGen2017.style.display = 'none';
+      segundaGen2016.style.display = 'none'
+      //muestra solo 2017-1
+      primeraGen2017.style.display = 'block';
 
-    }else if (tabSeleccionado === 'tab2016_2'){
-        console.log('vemos gen 16-2');
-        //oculta gen 2017 2 y 1
-        segundaGen2017.style.display= 'none';
-        primeraGen2017.style.display= 'none'
-        //muestra solo 2016-2
-        segundaGen2016.style.display= 'block';
+    } else if (tabSeleccionado === 'tab2016_2') {
+      console.log('vemos gen 16-2');
+      //oculta gen 2017 2 y 1
+      segundaGen2017.style.display = 'none';
+      primeraGen2017.style.display = 'none'
+      //muestra solo 2016-2
+      segundaGen2016.style.display = 'block';
     }
 
-}
-//Siguiendo con el menú tabs (pestañas)...
-//creando var para cargar evento del tab (pestañas generaciones)
-var cargarPagina = function(){
-//ocultando contenido  de todas las solapas al recargar la página
+  }
+  //Siguiendo con el menú tabs (pestañas)...
+  //creando var para cargar evento del tab (pestañas generaciones)
+  var cargarPagina = function() {
+    //ocultando contenido  de todas las solapas al recargar la página
     var segundaGen2017 = document.getElementById("2017_2");
     var primeraGen2017 = document.getElementById("2017_1");
     var segundaGen2016 = document.getElementById("2016_2");
     var elementosTab = document.getElementsByClassName("tab");
-    segundaGen2017.style.display= 'none';
-    primeraGen2017.style.display= 'none'
-    segundaGen2016.style.display= 'none';
+    segundaGen2017.style.display = 'none';
+    primeraGen2017.style.display = 'none'
+    segundaGen2016.style.display = 'none';
     var elementosTab = document.getElementsByClassName("tab");
-    for(var i = 0; i < elementosTab.length; i++){
-        elementosTab[i].addEventListener("click", mostrarOcultar);
+    for (var i = 0; i < elementosTab.length; i++) {
+      elementosTab[i].addEventListener("click", mostrarOcultar);
     }
-}
+  }
 
-cargarPagina();
+  cargarPagina();
 
 
-/*funcionalidad del buscador interno de alumnas*/
-function myFunction() {
+  /*funcionalidad del buscador interno de alumnas*/
+  function myFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
 
-        }
+      }
     }
-}
+  }
 
-//alert('estoy');comprobando vinculo y funcionalidad
+  //alert('estoy');comprobando vinculo y funcionalidad
 
 
-//´Botón TOP para ir arriba al inicio de sección
-function toTop() {
+  //´Botón TOP para ir arriba al inicio de sección
+  function toTop() {
     window.scrollTo(0, 0)
-}
-toTop();
+  }
+  toTop();
 
 }
 
@@ -232,52 +237,66 @@ toTop();
 //Grafícas de calificaciones Profesores - Jedi
 //Carga del API  (Libreria) de visualización y el paquete de grafícas
 
-google.charts.load('current', {'packages':['corechart']});
-    //Realizar llamado a la función que dibuja la gráfica cuando la libreria
-    //de google este cargada.
-    google.charts.setOnLoadCallback(drawChart);
+google.charts.load('current', {
+  'packages': ['corechart']
+});
+//Realizar llamado a la función que dibuja la gráfica cuando la libreria
+//de google este cargada.
+google.charts.setOnLoadCallback(drawChart);
 
-    //función que crea, rellena la tabla de datos y dibuja el gráfico de barras (ColumnChart)
-    function drawChart() {
+//función que crea, rellena la tabla de datos y dibuja el gráfico de barras (ColumnChart)
+function drawChart() {
 
   // Se crean los datos de la tabla.
-      var dataRatingChart = new google.visualization.DataTable();
-      dataRatingChart.addColumn('string', 'Sprints');
-      dataRatingChart.addColumn('number', 'Teachers Rating');
-      dataRatingChart.addColumn({type: 'string', role: 'annotation'});
-      dataRatingChart.addColumn('number', 'Jedi Master Rating');
-      dataRatingChart.addColumn({type: 'string', role: 'annotation'});
+  var dataRatingChart = new google.visualization.DataTable();
+  dataRatingChart.addColumn('string', 'Sprints');
+  dataRatingChart.addColumn('number', 'Teachers Rating');
+  dataRatingChart.addColumn({
+    type: 'string',
+    role: 'annotation'
+  });
+  dataRatingChart.addColumn('number', 'Jedi Master Rating');
+  dataRatingChart.addColumn({
+    type: 'string',
+    role: 'annotation'
+  });
 
-      dataRatingChart.addRows([
-        [{v: '', f: 'Sprint 1'},   4.0, '4.0',  4.8, '4.8'],
-        [{v: '', f: 'Sprint 2'},   3.9, '3.9',   4.3, '4.3'],
+  dataRatingChart.addRows([
+    [{
+      v: '',
+      f: 'Sprint 1'
+    }, 4.0, '4.0', 4.8, '4.8'],
+    [{
+      v: '',
+      f: 'Sprint 2'
+    }, 3.9, '3.9', 4.3, '4.3'],
 
-      ]);
+  ]);
 
-      // se crean los opciones (tiulo)
-      var optionsRatingChart = {
-      title: 'Teachers & Jedi Masters Ratings',
-      annotations: {
-        alwaysOutside: true,
-        textStyle: {
-          fontSize: 14,
-          color: '#000',
-          auraColor: 'none'
-        }
-      },
-      hAxis: {
-        title: 'Sprints'
-      },
-      vAxis: {
-        title: 'Ratings'
+  // se crean los opciones (tiulo)
+  var optionsRatingChart = {
+    title: 'Teachers & Jedi Masters Ratings',
+    annotations: {
+      alwaysOutside: true,
+      textStyle: {
+        fontSize: 14,
+        color: '#000',
+        auraColor: 'none'
       }
-    };
+    },
+    hAxis: {
+      title: 'Sprints'
+    },
+    vAxis: {
+      title: 'Ratings'
+    }
+  };
 
-      // Se instancia y se dibuja la gráfica pasando como parámetro los datos y las opciones.
-      var ratingChart = new google.visualization.ColumnChart(document.getElementById('ratingChart'));
-      ratingChart.draw(dataRatingChart, optionsRatingChart);
+  // Se instancia y se dibuja la gráfica pasando como parámetro los datos y las opciones.
+  var ratingChart = new google.visualization.ColumnChart(document.getElementById('ratingChart'));
+  ratingChart.draw(dataRatingChart, optionsRatingChart);
 
-  }
+}
 
 // Puedes hacer uso de la base de datos a través de la variable `data`
 console.log(data);

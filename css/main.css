@@ -5,8 +5,8 @@
 }
 
 body {
-    margin: 0 auto;
-    font-family: 'Roboto Condensed', sans-serif;
+  margin: 0 auto;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 h3 {
@@ -14,16 +14,17 @@ h3 {
 }
 
 /*Clase para ocultar Secciones*/
+
 .ocultar {
   display: none;
 }
 
 /*Clase al seleccionar una opcion del menu*/
+
 .select {
   color: #FFC107;
   text-decoration: underline;
 }
-
 
 #overview h1 {
   padding: 10px 0 0 0;
@@ -49,6 +50,7 @@ img {
   width: 85%;
   float: right;
 }
+
 #menu-lateral {
   width: 15%;
   height: 1000px;
@@ -91,26 +93,26 @@ img {
   border-radius: 0.2rem;
 }
 
-#sedes i{
+#sedes i {
   cursor: pointer;
 }
 
 /* Menu desplegable con sedes y generaciones*/
+
 a {
   text-decoration: none;
   color: #000;
 }
 
-.clearfix:after i{
-   content: "";
-   display: table;
-   text-decoration: none;
+.clearfix:after i {
+  content: "";
+  display: table;
+  text-decoration: none;
 }
 
-
 .menu-container {
-   width: 100%;
-   background: #E1E1E1;
+  width: 100%;
+  background: #E1E1E1;
 }
 
 .menu-nav {
@@ -119,22 +121,22 @@ a {
 }
 
 .sub-menu {
-   width: 300px;
-   position: absolute;
-   display: none;
-   background: #dbdbdb;
-   line-height: 1;
+  width: 300px;
+  position: absolute;
+  display: none;
+  background: #dbdbdb;
+  line-height: 1;
 }
 
 .sub-menu h1 {
-   font-size: 18px;
+  font-size: 18px;
 }
 
 .sub-menu li a {
-   font-size: 15px;
-   color: #000;
-   text-decoration: none;
-   border: none;
+  font-size: 15px;
+  color: #000;
+  text-decoration: none;
+  border: none;
 }
 
 .sub-menu li a:hover {
@@ -142,32 +144,35 @@ a {
 }
 
 .menu-nav ul li:hover>ul {
-   display: block;
-   border: none;
+  display: block;
+  border: none;
 }
 
 .menu-nav>ul>li:after {
-   content: "\25BC";
-   font-size: 0px;
-   padding-left: 5px;
-   display: inline;
-   position: relative;
+  content: "\25BC";
+  font-size: 0px;
+  padding-left: 5px;
+  display: inline;
+  position: relative;
 }
 
 /* Menus Sprints */
-.clearfixS:after i{
-   content: "";
-   display: table;
-   text-decoration: none;
+
+.clearfixS:after i {
+  content: "";
+  display: table;
+  text-decoration: none;
 }
-.clearfixS{
+
+.clearfixS {
   list-style: none;
 }
+
 .menu-containerS {
-   width: 20%;
-   float: left;
-   display: inline-block;
-   border-radius: .2rem
+  width: 20%;
+  float: left;
+  display: inline-block;
+  border-radius: .2rem
 }
 
 .menu-navS {
@@ -178,19 +183,19 @@ a {
 }
 
 .sub-menuS {
-   width: 100px;
-   position: absolute;
-   display: none;
-   background: #dbdbdb;
-   line-height: 1;
+  width: 100px;
+  position: absolute;
+  display: none;
+  background: #dbdbdb;
+  line-height: 1;
 }
 
 .sub-menuS li a {
-   font-size: 15px;
-   margin: 0;
-   color: #000;
-   text-decoration: none;
-   border: none;
+  font-size: 15px;
+  margin: 0;
+  color: #000;
+  text-decoration: none;
+  border: none;
 }
 
 .sub-menuS li a:hover {
@@ -198,16 +203,16 @@ a {
 }
 
 .menu-navS ul li:hover>ul {
-   display: block;
-   border: none;
+  display: block;
+  border: none;
 }
 
 .menu-navS>ul>li:after {
-   content: "\25BC";
-   font-size: 0px;
-   padding-left: 1px;
-   display: inline;
-   position: relative;
+  content: "\25BC";
+  font-size: 0px;
+  padding-left: 1px;
+  display: inline;
+  position: relative;
 }
 
 #menu-superior {
@@ -215,7 +220,7 @@ a {
   margin-left: 40px;
 }
 
-#menu-superior h2{
+#menu-superior h2 {
   float: left;
   display: inline-block;
   margin: 0 0 0 20px;
@@ -223,20 +228,23 @@ a {
   cursor: pointer;
 }
 
-
-
 /* SECCIONES OVERVIEW */
+
 #section1, #section2, #section3 {
   height: 50%;
 }
 
 /*Enrollement (#alumnas) y % desercion)*/
+
 /*Desempeño por sprint (tech y hse)*/
+
 /*NPS + satisfaccion de estudiantes*/
+
 #enrollement, #tech {
   margin-top: 20px;
   margin-left: 20px;
-  width: 48%;;
+  width: 48%;
+  ;
   height: 95%;
   background: #ededed;
   display: inline-block;
@@ -273,6 +281,7 @@ a {
 .marginLeft-box {
   margin-left: 50px;
 }
+
 .marginCenter {
   margin-left: 200px;
 }
@@ -294,15 +303,15 @@ a {
 }
 
 /*Gráficas */
-#desertoras-grafico{
+
+#desertoras-grafico {
   width: 70%;
   height: 280px;
   margin: 20px 0 0 80px;
   display: block;
-
 }
 
-#cumple-grafico{
+#cumple-grafico {
   width: 70%;
   height: 280px;
   margin: 20px 0 0 80px;
@@ -315,6 +324,7 @@ a {
   margin: 70px 0 0 100px;
   display: block;
 }
+
 #tech-grafico {
   width: 70%;
   height: 300px;
@@ -350,32 +360,37 @@ a {
   height: auto;
 }
 
-
 /*div OVERVIEW*/
+
 #overview {
   height: 1000px;
 }
 
 /* div STUDENTS */
+
 #students {
   height: 1000px;
 }
 
 /*div TEACHERS*/
+
 #teachers {
   height: 1000px;
 }
 
-
 /* DIANA CHAPARRO*/
+
 /*secciones contenedor de solapas*/
-.contenedor{
+
+.contenedor {
   width: 100%;
   margin: 0 auto;
   display: block;
 }
+
 /*Cambios titulo y p*/
-#seccionInicial{
+
+#seccionInicial {
   font-size: 20px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -384,23 +399,21 @@ a {
 #seccionInicial p {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-
 }
+
 /*modifico contenedor solapas*/
-#seccionContenido .contenedorTabs{
+
+#seccionContenido .contenedorTabs {
   width: 100%;
   color: white;
   font-size: 15px;
   border-bottom: grey solid 1px;
 }
 
-input #myInput{
-
-}
-
-
+input #myInput {}
 
 /* las solapas como tal*/
+
 .tab {
   color: #0D0D0D;
   background-color: #FFC107;
@@ -413,13 +426,15 @@ input #myInput{
 }
 
 /*modifica li de solapas*/
-.contenedorTabs li{
+
+.contenedorTabs li {
   list-style: none;
   display: inline-block;
 }
 
 /*modifica item x item las alumnas*/
-#myUl li{
+
+#myUl li {
   list-style: none;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -434,21 +449,22 @@ input #myInput{
 }
 
 /*modifica los últimos li de la lista*/
+
 /*para darle padding*/
 
-
 /*modifica los em de la lista*/
-#myUl li em{
+
+#myUl li em {
   font-weight: normal;
   font-size: 15px;
   float: left;
   display: inline-block;
   margin-top: 5px;
-
 }
 
 /*img perfil alumna*/
-#myUl img{
+
+#myUl img {
   height: 8%;
   width: 8%;
   float: left;
@@ -459,7 +475,8 @@ input #myInput{
 }
 
 /*img resumen de skills*/
-#skills img{
+
+#skills img {
   height: 60%;
   width: 60%;
   float: right;
@@ -468,11 +485,13 @@ input #myInput{
 }
 
 /*modifica li de solapas*/
+
 .divTexto {
   padding-left: 36px;
 }
 
 /*modifica contenedor textos*/
+
 .divTexto h2 {
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -484,7 +503,7 @@ input #myInput{
   font-size: 20px;
 }
 
-footer{
+footer {
   width: 100%;
   height: 10%;
   background-color: black;
@@ -492,9 +511,9 @@ footer{
   display: inline-block;
 }
 
- #top input{
+#top input {
   display: block;
-  padding : 5px auto;
+  padding: 5px auto;
   margin: 160px auto;
   margin-left: 1000px;
   position: fixed;
