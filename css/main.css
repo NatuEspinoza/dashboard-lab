@@ -1,0 +1,585 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h3 {
+  margin: 0;
+}
+
+/*Clase para ocultar Secciones*/
+.ocultar {
+  display: none;
+}
+
+/*Clase al seleccionar una opcion del menu*/
+.select {
+  color: #FFC107;
+  text-decoration: underline;
+}
+
+
+#overview h1 {
+  padding: 10px 0 0 0;
+  margin: 0;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+#header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 70px;
+  background: #FFC107;
+  text-align: center;
+}
+
+#container {
+  width: 85%;
+  float: right;
+}
+#menu-lateral {
+  width: 15%;
+  height: 1000px;
+  display: inline-block;
+}
+
+#user {
+  height: 110px;
+  padding-top: 20px;
+  border: 1px solid grey;
+  background: #535353;
+  padding-left: 10px;
+}
+
+#addStudent, #removeStudent, #addSprint {
+  height: 50px;
+  border: 1px solid grey;
+  background: #535353;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+#addStudent:hover, #removeStudent:hover, #addSprint:hover {
+  background: #303030;
+}
+
+#sedes {
+  margin: 20px;
+}
+
+#sedes #scl-17-2 {
+  font-size: 30px;
+  width: 390px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#scl-17-2:hover {
+  background: #939393;
+  border-radius: 0.2rem;
+}
+
+#sedes i{
+  cursor: pointer;
+}
+
+/* Menu desplegable con sedes y generaciones*/
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.clearfix:after i{
+   content: "";
+   display: table;
+   text-decoration: none;
+}
+
+
+.menu-container {
+   width: 100%;
+   background: #E1E1E1;
+}
+
+.menu-nav {
+  background: #FFF;
+  position: relative;
+}
+
+.sub-menu {
+   width: 300px;
+   position: absolute;
+   display: none;
+   background: #dbdbdb;
+   line-height: 1;
+}
+
+.sub-menu h1 {
+   font-size: 18px;
+}
+
+.sub-menu li a {
+   font-size: 15px;
+   color: #000;
+   text-decoration: none;
+   border: none;
+}
+
+.sub-menu li a:hover {
+  color: #FFC107;
+}
+
+.menu-nav ul li:hover>ul {
+   display: block;
+   border: none;
+}
+
+.menu-nav>ul>li:after {
+   content: "\25BC";
+   font-size: 0px;
+   padding-left: 5px;
+   display: inline;
+   position: relative;
+}
+
+/* Menus Sprints */
+.clearfixS:after i{
+   content: "";
+   display: table;
+   text-decoration: none;
+}
+.clearfixS{
+  list-style: none;
+}
+.menu-containerS {
+   width: 20%;
+   float: left;
+   display: inline-block;
+   border-radius: .2rem
+}
+
+.menu-navS {
+  width: 120px;
+  margin-left: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.sub-menuS {
+   width: 100px;
+   position: absolute;
+   display: none;
+   background: #dbdbdb;
+   line-height: 1;
+}
+
+.sub-menuS li a {
+   font-size: 15px;
+   margin: 0;
+   color: #000;
+   text-decoration: none;
+   border: none;
+}
+
+.sub-menuS li a:hover {
+  color: #FFC107;
+}
+
+.menu-navS ul li:hover>ul {
+   display: block;
+   border: none;
+}
+
+.menu-navS>ul>li:after {
+   content: "\25BC";
+   font-size: 0px;
+   padding-left: 1px;
+   display: inline;
+   position: relative;
+}
+
+#menu-superior {
+  height: 30px;
+  margin-left: 40px;
+}
+
+#menu-superior h2{
+  float: left;
+  display: inline-block;
+  margin: 0 0 0 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+/* SECCIONES OVERVIEW */
+#section1, #section2, #section3 {
+  height: 50%;
+}
+
+/*Enrollement (#alumnas) y % desercion)*/
+/*Desempeño por sprint (tech y hse)*/
+/*NPS + satisfaccion de estudiantes*/
+#enrollement, #tech {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 48%;;
+  height: 95%;
+  background: #ededed;
+  display: inline-block;
+}
+
+#achievement, #hse {
+  margin-top: 20px;
+  width: 48%;
+  height: 95%;
+  background: #ededed;
+  float: right;
+}
+
+#nps {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 98%;
+  height: 95%;
+  background: #ededed;
+}
+
+.infoBox {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 10px;
+  line-height: 1;
+  text-align: center;
+  background-color: #d1d2d2;
+  display: inline-block;
+  text-align: center;
+}
+
+.marginLeft-box {
+  margin-left: 50px;
+}
+.marginCenter {
+  margin-left: 200px;
+}
+
+.marginNPS {
+  margin-left: 300px;
+}
+
+.valorNegativo, .fa-frown-o {
+  color: #a60c10;
+}
+
+.valorPositivo, .fa-smile-o {
+  color: #51bb07;
+}
+
+.valorMedio, .fa-meh-o {
+  color: #d79605;
+}
+
+/*Gráficas */
+#desertoras-grafico{
+  width: 70%;
+  height: 280px;
+  margin: 20px 0 0 80px;
+  display: block;
+
+}
+
+#cumple-grafico{
+  width: 70%;
+  height: 280px;
+  margin: 20px 0 0 80px;
+  display: block;
+}
+
+#hse-grafico {
+  width: 70%;
+  height: 300px;
+  margin: 70px 0 0 100px;
+  display: block;
+}
+#tech-grafico {
+  width: 70%;
+  height: 300px;
+  margin: 120px 0 0 100px;
+  display: block;
+}
+
+#nps-grafico {
+  width: 50%;
+  height: 250px;
+  margin: 30px 0 0 250px;
+  display: inline-block;
+}
+
+#iconos {
+  width: 10%;
+  height: 200px;
+  margin-top: 20px;
+  float: right;
+  display: inline-block;
+}
+
+.faces {
+  width: 5%;
+  height: 250px;
+  margin-left: 50px;
+  margin-right: 50px;
+  float: right;
+}
+
+.graficos {
+  width: 370px;
+  height: auto;
+}
+
+
+/*div OVERVIEW*/
+#overview {
+  height: 1000px;
+}
+
+/* div STUDENTS */
+#students {
+  height: 1000px;
+}
+
+/*div TEACHERS*/
+#teachers {
+  height: 1000px;
+}
+
+
+/* DIANA CHAPARRO*/
+/*secciones contenedor de solapas*/
+.contenedor{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+/*Cambios titulo y p*/
+#seccionInicial{
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+#seccionInicial p {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+
+}
+/*modifico contenedor solapas*/
+#seccionContenido .contenedorTabs{
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  border-bottom: grey solid 1px;
+}
+
+input #myInput{
+
+}
+
+
+
+/* las solapas como tal*/
+.tab {
+  color: #0D0D0D;
+  background-color: #FFC107;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5%;
+  border-bottom: none;
+  padding: 10px;
+  width: 100px;
+}
+
+/*modifica li de solapas*/
+.contenedorTabs li{
+  list-style: none;
+  display: inline-block;
+}
+
+/*modifica item x item las alumnas*/
+#myUl li{
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  padding: 80px;
+  border: grey solid 1px;
+  width: 90%;
+  height: 20%;
+  float: left;
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 90px;
+}
+
+/*modifica los últimos li de la lista*/
+/*para darle padding*/
+
+
+/*modifica los em de la lista*/
+#myUl li em{
+  font-weight: normal;
+  font-size: 15px;
+  float: left;
+  display: inline-block;
+  margin-top: 5px;
+
+}
+
+/*img perfil alumna*/
+#myUl img{
+  height: 8%;
+  width: 8%;
+  float: left;
+  padding: 5px;
+  margin-top: -75px;
+  margin-left: -145px;
+  display: inline-block;
+}
+
+/*img resumen de skills*/
+#skills img{
+  height: 60%;
+  width: 60%;
+  float: right;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+/*modifica li de solapas*/
+.divTexto {
+  padding-left: 36px;
+}
+
+/*modifica contenedor textos*/
+.divTexto h2 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.divTexto h1 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+footer{
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  padding: 0 auto;
+  display: inline-block;
+}
+
+ #top input{
+  display: block;
+  padding : 5px auto;
+  margin: 160px auto;
+  margin-left: 1000px;
+  position: fixed;
+  background-color: #FFC107;
+}
+
+/* PAULA GIRALDO*/
+
+/*Menu calificación Teacher & Jedi */
+
+#menuTeacher {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 5px;
+}
+
+#menuTeacher ul {
+  list-style: none;
+}
+
+#menuTeacher li {
+  width: 700%;
+  height: 100px;
+}
+
+p .menu {
+  padding: 15px;
+  padding-right: 20px;
+  display: inline-block;
+  background-color: #FFC107;
+}
+
+input .buscador {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  outline: none;
+  border: 0px;
+}
+
+.menu:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.titulo h2 {
+  text-align: center;
+  display: inline-block;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+/* Grafícas de calificaciones Profesores - Jedi*/
+
+#ratingChart {
+  height: 500px;
+  width: 800px;
+  display: inline-block;
+  margin-left: 300px;
+  margin-top: -250px;
+}
+
+#teacher {
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  background: #ccc;
+  color: #000;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -400px;
+  margin-left: 400px;
+  padding: 0px;
+}
+
+#jedi {
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  background: #ccc;
+  color: #000;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -400px;
+  margin-left: 600px;
+}
